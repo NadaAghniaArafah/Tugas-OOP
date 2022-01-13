@@ -1,0 +1,11 @@
+try {
+File file = new
+File("src/program/universitas/report_mahasiswa.jrxml ");
+jasperDesign = JRXmlLoader.load(file);
+param.clear();
+jasperReport =
+JasperCompileManager.compileReport(jasperDesign);
+jasperPrint = JasperFillManager.fillReport(jasperReport,
+param, koneksi.getConnection());
+JasperViewer.viewReport(jasperPrint, false);
+} catch (Exception e) { e.printStackTrace();}
